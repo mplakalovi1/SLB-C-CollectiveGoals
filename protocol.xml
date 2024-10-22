@@ -15,7 +15,7 @@
 
 	<Compliancies>
 		<CassandraReady>true</CassandraReady>
-		<MinimumRequiredVersion>10.1.0.0 - 9966</MinimumRequiredVersion>
+		<MinimumRequiredVersion>10.2.0.0 - 12603</MinimumRequiredVersion>
 	</Compliancies>
 	
 	<Params>
@@ -24,157 +24,9 @@
 			<Description>After Startup</Description>
 			<Type>dummy</Type>
 		</Param>
-		<!-- StandAlone parameters-->
-		<Param id="50" trending="true" save="true">
-			<Name>totalPoints</Name>
-			<Description>Total</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>The total number of points accumulated.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Default threshold unknown. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<!-- SuppressValidator 2.11.1 Range is unknown.
- -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<!-- SuppressValidator 2.9.4 Can be suppressed. -->
-				<Units>DevOps Points</Units>
-				<!-- /SuppressValidator 2.9.4 -->
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>0</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<!-- /SuppressValidator 2.11.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="51" trending="true" save="true">
-			<Name>targetGoal</Name>
-			<Description>Goal</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>The target number of points to accomplish.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Default threshold unknown. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<!-- SuppressValidator 2.9.4 Can be suppressed. -->
-				<Units>DevOps Points</Units>
-				<!-- /SuppressValidator 2.9.4 -->
-				<Range>
-					<Low>0</Low>
-					<High>1000000000</High>
-				</Range>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="101" setter="true">
-			<Name>targetGoal</Name>
-			<Description>Goal</Description>
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<!-- SuppressValidator 2.9.4 Can be suppressed. -->
-				<Units>DevOps Points</Units>
-				<!-- /SuppressValidator 2.9.4 -->
-				<Range>
-					<Low>0</Low>
-					<High>1000000000</High>
-				</Range>
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>1</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="52" trending="true" save="true">
-			<Name>completionRate</Name>
-			<Description>Completion Rate</Description>
-			<Type>read</Type>
-			<Information>
-				<Subtext>The percentage of achievement in relation to the target goal.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Default threshold unknown. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<Range>
-					<Low>0</Low>
-					<High>100</High>
-				</Range>
-				<!-- SuppressValidator 2.9.4 Can be suppressed. -->
-				<Units>%</Units>
-				<Decimals>1</Decimals>
-				<!-- /SuppressValidator 2.9.4 -->
-				<Positions>
-					<Position>
-						<Page>General</Page>
-						<Column>0</Column>
-						<Row>2</Row>
-					</Position>
-				</Positions>
-			</Display>
-			<!-- /SuppressValidator 2.11.1 -->
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
 		<Param id="990">
-			<Name>DevOpsTrackingTable_ContextMenu</Name>
-			<!-- SuppressValidator 2.14.7 Can be suppressed. -->
-			<Description>Context Menu for DevOps Points</Description>
-			<!-- /SuppressValidator 2.14.7 -->
+			<Name>collectiveGoals_ContextMenu</Name>
+			<Description>Context Menu for Collective Goals</Description>
 			<Type>write</Type>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -187,37 +39,64 @@
 			<Measurement>
 				<Type>discreet</Type>
 				<Discreets>
-					<Discreet dependencyValues="1002">
-						<Display>Add Employee...</Display>
+					<Discreet dependencyValues="1002;1003;1004;1005">
+						<Display>Add item...</Display>
 						<Value>1</Value>
+					</Discreet>
+					<Discreet options="table:singleselection" dependencyValues="1002:[value:1002];1003:[value:1003];1004:[value:1004];1005:[value:1005]">
+						<Display>Duplicate item...</Display>
+						<Value>2</Value>
 					</Discreet>
 					<Discreet options="separator">
 						<Display>Separator 1</Display>
 						<Value>-1</Value>
 					</Discreet>
-					<Discreet options="table:singleselection;confirm:The selected item will be deleted permanently.">
-						<Display>Remove Employee</Display>
-						<Value>0</Value>
+					<Discreet options="table:singleselection" dependencyValues="1003:[value:1003];1004:[value:1004];1005:[value:1005]">
+						<Display>Edit item...</Display>
+						<Value>10</Value>
+					</Discreet>
+					<Discreet options="separator">
+						<Display>Separator 2</Display>
+						<Value>-2</Value>
+					</Discreet>
+					<Discreet options="table:selection;confirm:The selected item(s) will be deleted permanently.">
+						<Display>Delete selected item(s)</Display>
+						<Value>20</Value>
 					</Discreet>
 				</Discreets>
 			</Measurement>
 		</Param>
+		<Param id="991" trending="false" save="true">
+			<Name>collectiveGoals_AutoInc</Name>
+			<Description>Auto Inc Buffer for Collective Goals</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Used to save the latest ID used for a row in order to know what PK to use for future rows.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<DefaultValue>0</DefaultValue>
+			</Interprete>
+		</Param>
+		<!-- StandAlone parameters ##start-->
+		<!-- StandAlone parameters ##end-->
 		
-		<!-- DevOps Points Tracking Table -->
+		<!-- Table parameters ##start-->
 		<Param id="1000">
-			<Name>DevOpsTrackingTable</Name>
-			<!-- SuppressValidator 2.14.7 Can be Suppressed.-->
-			<Description>DevOps Professional Program</Description>
-			<!-- /SuppressValidator 2.14.7 -->
+			<Name>collectiveGoals</Name>
+			<Description>Collective Goals</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0" options=";naming=/1002">
-				<ColumnOption idx="0" pid="1001" type="retrieved" options=""/>
+				<ColumnOption idx="0" pid="1001" type="autoincrement" options=""/>
 				<ColumnOption idx="1" pid="1002" type="retrieved" options="" />
-				<ColumnOption idx="2" pid="1003" type="retrieved" options=";save;enableHeaderSum;disableHistogram;enableHeatmap" />
-				<ColumnOption idx="3" pid="1004" type="retrieved" options=";save" />
+				<ColumnOption idx="2" pid="1003" type="retrieved" options="" />
+				<ColumnOption idx="3" pid="1004" type="retrieved" options="" />
+				<ColumnOption idx="4" pid="1005" type="retrieved" options="" />
 			</ArrayOptions>
 			<Information>
-				<Subtext>DevOps Professional Program Tracking Table.</Subtext>
+				<Subtext>Table Containing Collective Goals details.</Subtext>
 			</Information>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -225,19 +104,17 @@
 					<Position>
 						<Page>General</Page>
 						<Column>0</Column>
-						<Row>4</Row>
+						<Row>0</Row>
 					</Position>
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3,width:0-150-200-150,sort:STRING-STRING-INT|DESC|0-STRING,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:1001|0-1002|1-1003|2-1004|3-1005|4,width:0-100-400-100-150,sort:STRING-STRING-STRING-STRING-INT|ASC,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="1001" trending="false">
-			<Name>DevOpsTrackingIndex</Name>
-			<!-- SuppressValidator 2.14.7 Can be suppressed. -->
-			<Description>Index</Description>
-			<!-- /SuppressValidator 2.14.7 -->
+			<Name>collectiveGoalsInstance</Name>
+			<Description>Instance (Collective Goals)</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>This is the key used internally by DataMiner to identify the table entries.</Subtext>
@@ -255,13 +132,11 @@
 			</Measurement>
 		</Param>
 		<Param id="1002" trending="false">
-			<Name>DevOpsTrackingName</Name>
-			<!-- SuppressValidator 2.14.7 Can be suppressed. -->
-			<Description>Name [IDX]</Description>
-			<!-- /SuppressValidator 2.14.7 -->
+			<Name>collectiveGoalsName</Name>
+			<Description>Name [IDX] (Collective Goals)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>Employee Name.</Subtext>
+				<Subtext>Name of Collective Goal.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -275,85 +150,43 @@
 				<Type>string</Type>
 			</Measurement>
 		</Param>
-		<Param id="1003" trending="true">
-			<Name>DevOpsTrackingPoints</Name>
-			<!-- SuppressValidator 2.14.7 Can be suppressed. -->
-			<Description>Points</Description>
-			<!-- /SuppressValidator 2.14.7 -->
+		<Param id="1003" trending="false" save="true">
+			<Name>collectiveGoalsDescription</Name>
+			<Description>Description (Collective Goals)</Description>
 			<Type>read</Type>
 			<Information>
-				<Subtext>DataMiner DevOps Professional Program DevOps Points.</Subtext>
+				<Subtext>Collective Goal Description</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>other</RawType>
+				<Type>string</Type>
+				<LengthType>next param</LengthType>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+			</Display>
+			<Measurement>
+				<Type>string</Type>
+			</Measurement>
+		</Param>
+		<Param id="1004" trending="false" save="true">
+			<Name>collectiveGoalsStatus</Name>
+			<Description>Status (Collective Goals)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Status of the Collective Goal.</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<!-- SuppressValidator 2.5.1 Default thresholds are not known. -->
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>2</Normal>
+				<CL>0</CL>
+				<WaL>1</WaL>
 			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<!-- SuppressValidator 2.9.4 It's the new unit in International System of Units. -->
-				<Units>DevOps Points</Units>
-				<!-- /SuppressValidator 2.9.4 -->
-				<Range>
-					<Low>0</Low>
-					<High>1000000000</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1053" setter="true">
-			<Name>DevOpsTrackingPoints</Name>
-			<!-- SuppressValidator 2.14.7 Can be suppressed. -->
-			<Description>Points</Description>
-			<!-- /SuppressValidator 2.14.7 -->
-			<Type>write</Type>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Default thresholds are not known. -->
-			<!-- /SuppressValidator 2.5.1 -->
-			<Display>
-				<RTDisplay>true</RTDisplay>
-				<!-- SuppressValidator 2.9.4 It's the new unit in International System of Units. -->
-				<Units>DevOps Points</Units>
-				<!-- /SuppressValidator 2.9.4 -->
-				<Range>
-					<Low>0</Low>
-					<High>1000000000</High>
-				</Range>
-			</Display>
-			<Measurement>
-				<Type>number</Type>
-			</Measurement>
-		</Param>
-		<Param id="1004" trending="true">
-			<Name>DevOpsTrackingLevel</Name>
-			<!-- SuppressValidator 2.14.7 Can be suppressed. -->
-			<Description>Level</Description>
-			<!-- /SuppressValidator 2.14.7 -->
-			<Type>read</Type>
-			<Information>
-				<Subtext>Displays the employee's DevOps Professional Program Level.</Subtext>
-			</Information>
-			<Interprete>
-				<RawType>numeric text</RawType>
-				<Type>double</Type>
-				<LengthType>next param</LengthType>
-			</Interprete>
-			<!-- SuppressValidator 2.5.1 Default thresholds are not known. -->
-			<Alarm>
-				<Monitored>true</Monitored>
-			</Alarm>
-			<!-- /SuppressValidator 2.5.1 -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
@@ -361,31 +194,55 @@
 				<Type>discreet</Type>
 				<Discreets>
 					<Discreet>
-						<Display>Member</Display>
+						<Display>Not Started</Display>
 						<Value>0</Value>
 					</Discreet>
 					<Discreet>
-						<Display>Advocate</Display>
+						<Display>In Progress</Display>
 						<Value>1</Value>
 					</Discreet>
 					<Discreet>
-						<Display>Enabler</Display>
+						<Display>Completed</Display>
 						<Value>2</Value>
 					</Discreet>
 					<Discreet>
-						<Display>Catalyst</Display>
+						<Display>Paused</Display>
 						<Value>3</Value>
+					</Discreet>
+					<Discreet>
+						<Display>Canceled</Display>
+						<Value>4</Value>
 					</Discreet>
 				</Discreets>
 			</Measurement>
 		</Param>
+		<Param id="1005" trending="false" save="true">
+			<Name>collectiveGoalsDueDate</Name>
+			<Description>Due Date (Collective Goals)</Description>
+			<Type>read</Type>
+			<Information>
+				<Subtext>Collective Goal Due Date.</Subtext>
+			</Information>
+			<Interprete>
+				<RawType>numeric text</RawType>
+				<Type>double</Type>
+				<LengthType>next param</LengthType>
+				<Decimals>8</Decimals>
+			</Interprete>
+			<Display>
+				<RTDisplay>true</RTDisplay>
+				<Decimals>8</Decimals>
+			</Display>
+			<Measurement>
+				<Type options="datetime">number</Type>
+			</Measurement>
+		</Param>
+		<!-- Table parameters ##end-->
 	</Params>
 	
 	<QActions>
 		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
-		<QAction id="990" name="DevOps Points - ContextMenu" encoding="csharp" triggers="990" />
-		<QAction id="1000" name="DevOps Table Write Parameters" encoding="csharp" triggers="1053" row="true">
-		</QAction>
+		<QAction id="990" name="Collective Goals - ContextMenu" encoding="csharp" triggers="990" />
 	</QActions>
 	
 	<Groups>

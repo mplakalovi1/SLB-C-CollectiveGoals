@@ -8,40 +8,20 @@ namespace Skyline.DataMiner.Scripting
 {
 public static class Parameter
 {
-	/// <summary>PID: 50 | Type: read</summary>
+	/// <summary>PID: 991 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int totalpoints_50 = 50;
-	/// <summary>PID: 50 | Type: read</summary>
-	public const int totalpoints = 50;
-	/// <summary>PID: 51 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int targetgoal_51 = 51;
-	/// <summary>PID: 51 | Type: read</summary>
-	public const int targetgoal = 51;
-	/// <summary>PID: 52 | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int completionrate_52 = 52;
-	/// <summary>PID: 52 | Type: read</summary>
-	public const int completionrate = 52;
+	public const int collectivegoals_autoinc_991 = 991;
+	/// <summary>PID: 991 | Type: read</summary>
+	public const int collectivegoals_autoinc = 991;
 	public class Write
 	{
-		/// <summary>PID: 101 | Type: write</summary>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int targetgoal_101 = 101;
-		/// <summary>PID: 101 | Type: write</summary>
-		public const int targetgoal = 101;
 		/// <summary>PID: 990 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int devopstrackingtable_contextmenu_990 = 990;
+		public const int collectivegoals_contextmenu_990 = 990;
 		/// <summary>PID: 990 | Type: write</summary>
-		public const int devopstrackingtable_contextmenu = 990;
-		/// <summary>PID: 1053 | Type: write</summary>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int devopstrackingpoints_1053 = 1053;
-		/// <summary>PID: 1053 | Type: write</summary>
-		public const int devopstrackingpoints = 1053;
+		public const int collectivegoals_contextmenu = 990;
 	}
-	public class Devopstrackingtable
+	public class Collectivegoals
 	{
 		/// <summary>PID: 1000</summary>
 		public const int tablePid = 1000;
@@ -53,24 +33,29 @@ public static class Parameter
 		{
 			/// <summary>PID: 1001 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackingindex_1001 = 1001;
+			public const int collectivegoalsinstance_1001 = 1001;
 			/// <summary>PID: 1001 | Type: read</summary>
-			public const int devopstrackingindex = 1001;
+			public const int collectivegoalsinstance = 1001;
 			/// <summary>PID: 1002 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackingname_1002 = 1002;
+			public const int collectivegoalsname_1002 = 1002;
 			/// <summary>PID: 1002 | Type: read</summary>
-			public const int devopstrackingname = 1002;
+			public const int collectivegoalsname = 1002;
 			/// <summary>PID: 1003 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackingpoints_1003 = 1003;
+			public const int collectivegoalsdescription_1003 = 1003;
 			/// <summary>PID: 1003 | Type: read</summary>
-			public const int devopstrackingpoints = 1003;
+			public const int collectivegoalsdescription = 1003;
 			/// <summary>PID: 1004 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackinglevel_1004 = 1004;
+			public const int collectivegoalsstatus_1004 = 1004;
 			/// <summary>PID: 1004 | Type: read</summary>
-			public const int devopstrackinglevel = 1004;
+			public const int collectivegoalsstatus = 1004;
+			/// <summary>PID: 1005 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int collectivegoalsduedate_1005 = 1005;
+			/// <summary>PID: 1005 | Type: read</summary>
+			public const int collectivegoalsduedate = 1005;
 			public class Write
 			{
 			}
@@ -79,35 +64,36 @@ public static class Parameter
 		{
 			/// <summary>IDX: 0 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackingindex_1001 = 0;
+			public const int collectivegoalsinstance_1001 = 0;
 			/// <summary>IDX: 0 | Type: read</summary>
-			public const int devopstrackingindex = 0;
+			public const int collectivegoalsinstance = 0;
 			/// <summary>IDX: 1 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackingname_1002 = 1;
+			public const int collectivegoalsname_1002 = 1;
 			/// <summary>IDX: 1 | Type: read</summary>
-			public const int devopstrackingname = 1;
+			public const int collectivegoalsname = 1;
 			/// <summary>IDX: 2 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackingpoints_1003 = 2;
+			public const int collectivegoalsdescription_1003 = 2;
 			/// <summary>IDX: 2 | Type: read</summary>
-			public const int devopstrackingpoints = 2;
+			public const int collectivegoalsdescription = 2;
 			/// <summary>IDX: 3 | Type: read</summary>
 			[EditorBrowsable(EditorBrowsableState.Never)]
-			public const int devopstrackinglevel_1004 = 3;
+			public const int collectivegoalsstatus_1004 = 3;
 			/// <summary>IDX: 3 | Type: read</summary>
-			public const int devopstrackinglevel = 3;
+			public const int collectivegoalsstatus = 3;
+			/// <summary>IDX: 4 | Type: read</summary>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public const int collectivegoalsduedate_1005 = 4;
+			/// <summary>IDX: 4 | Type: read</summary>
+			public const int collectivegoalsduedate = 4;
 		}
 	}
 }
 public class WriteParameters
 {
-	/// <summary>PID: 101  | Type: write</summary>
-	public System.Object Targetgoal {get { return Protocol.GetParameter(101); }set { Protocol.SetParameter(101, value); }}
-	/// <summary>PID: 990  | Type: write | DISCREETS: Add Employee... = 1, Separator 1 = -1, Remove Employee = 0</summary>
-	public System.Object Devopstrackingtable_contextmenu {get { return Protocol.GetParameter(990); }set { Protocol.SetParameter(990, value); }}
-	/// <summary>PID: 1053  | Type: write</summary>
-	public System.Object Devopstrackingpoints {get { return Protocol.GetParameter(1053); }set { Protocol.SetParameter(1053, value); }}
+	/// <summary>PID: 990  | Type: write | DISCREETS: Add item... = 1, Duplicate item... = 2, Separator 1 = -1, Edit item... = 10, Separator 2 = -2, Delete selected item(s) = 20</summary>
+	public System.Object Collectivegoals_contextmenu {get { return Protocol.GetParameter(990); }set { Protocol.SetParameter(990, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -117,119 +103,109 @@ public class WriteParameters
 public interface SLProtocolExt : SLProtocol
 {
 	/// <summary>PID: 1000</summary>
-	DevopstrackingtableQActionTable devopstrackingtable { get; set; }
+	CollectivegoalsQActionTable collectivegoals { get; set; }
 	object Afterstartup_dummy { get; set; }
-	object Totalpoints_50 { get; set; }
-	object Totalpoints { get; set; }
-	object Targetgoal_51 { get; set; }
-	object Targetgoal { get; set; }
-	object Completionrate_52 { get; set; }
-	object Completionrate { get; set; }
-	object Targetgoal_101 { get; set; }
-	object Devopstrackingtable_contextmenu_990 { get; set; }
-	object Devopstrackingtable_contextmenu { get; set; }
-	object Devopstrackingindex_1001 { get; set; }
-	object Devopstrackingindex { get; set; }
-	object Devopstrackingname_1002 { get; set; }
-	object Devopstrackingname { get; set; }
-	object Devopstrackingpoints_1003 { get; set; }
-	object Devopstrackingpoints { get; set; }
-	object Devopstrackinglevel_1004 { get; set; }
-	object Devopstrackinglevel { get; set; }
-	object Devopstrackingpoints_1053 { get; set; }
+	object Collectivegoals_contextmenu_990 { get; set; }
+	object Collectivegoals_contextmenu { get; set; }
+	object Collectivegoals_autoinc_991 { get; set; }
+	object Collectivegoals_autoinc { get; set; }
+	object Collectivegoalsinstance_1001 { get; set; }
+	object Collectivegoalsinstance { get; set; }
+	object Collectivegoalsname_1002 { get; set; }
+	object Collectivegoalsname { get; set; }
+	object Collectivegoalsdescription_1003 { get; set; }
+	object Collectivegoalsdescription { get; set; }
+	object Collectivegoalsstatus_1004 { get; set; }
+	object Collectivegoalsstatus { get; set; }
+	object Collectivegoalsduedate_1005 { get; set; }
+	object Collectivegoalsduedate { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 {
 	/// <summary>PID: 1000</summary>
-	public DevopstrackingtableQActionTable devopstrackingtable { get; set; }
+	public CollectivegoalsQActionTable collectivegoals { get; set; }
 	/// <summary>PID: 2  | Type: dummy</summary>
 	public System.Object Afterstartup_dummy {get { return GetParameter(2); }set { SetParameter(2, value); }}
-	/// <summary>PID: 50  | Type: read</summary>
+	/// <summary>PID: 990  | Type: write | DISCREETS: Add item... = 1, Duplicate item... = 2, Separator 1 = -1, Edit item... = 10, Separator 2 = -2, Delete selected item(s) = 20</summary>
+	public System.Object Collectivegoals_contextmenu_990 {get { return GetParameter(990); }set { SetParameter(990, value); }}
+	/// <summary>PID: 990  | Type: write | DISCREETS: Add item... = 1, Duplicate item... = 2, Separator 1 = -1, Edit item... = 10, Separator 2 = -2, Delete selected item(s) = 20</summary>
+	public System.Object Collectivegoals_contextmenu {get { return Write.Collectivegoals_contextmenu; }set { Write.Collectivegoals_contextmenu = value; }}
+	/// <summary>PID: 991  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Totalpoints_50 {get { return GetParameter(50); }set { SetParameter(50, value); }}
-	/// <summary>PID: 50  | Type: read</summary>
-	public System.Object Totalpoints {get { return GetParameter(50); }set { SetParameter(50, value); }}
-	/// <summary>PID: 51  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Targetgoal_51 {get { return GetParameter(51); }set { SetParameter(51, value); }}
-	/// <summary>PID: 51  | Type: read</summary>
-	public System.Object Targetgoal {get { return GetParameter(51); }set { SetParameter(51, value); }}
-	/// <summary>PID: 52  | Type: read</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Completionrate_52 {get { return GetParameter(52); }set { SetParameter(52, value); }}
-	/// <summary>PID: 52  | Type: read</summary>
-	public System.Object Completionrate {get { return GetParameter(52); }set { SetParameter(52, value); }}
-	/// <summary>PID: 101  | Type: write</summary>
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Targetgoal_101 {get { return GetParameter(101); }set { SetParameter(101, value); }}
-	/// <summary>PID: 990  | Type: write | DISCREETS: Add Employee... = 1, Separator 1 = -1, Remove Employee = 0</summary>
-	public System.Object Devopstrackingtable_contextmenu_990 {get { return GetParameter(990); }set { SetParameter(990, value); }}
-	/// <summary>PID: 990  | Type: write | DISCREETS: Add Employee... = 1, Separator 1 = -1, Remove Employee = 0</summary>
-	public System.Object Devopstrackingtable_contextmenu {get { return Write.Devopstrackingtable_contextmenu; }set { Write.Devopstrackingtable_contextmenu = value; }}
+	public System.Object Collectivegoals_autoinc_991 {get { return GetParameter(991); }set { SetParameter(991, value); }}
+	/// <summary>PID: 991  | Type: read</summary>
+	public System.Object Collectivegoals_autoinc {get { return GetParameter(991); }set { SetParameter(991, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackingindex_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	public System.Object Collectivegoalsinstance_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
-	public System.Object Devopstrackingindex {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	public System.Object Collectivegoalsinstance {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
 	/// <summary>PID: 1002  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackingname_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	public System.Object Collectivegoalsname_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
 	/// <summary>PID: 1002  | Type: read</summary>
-	public System.Object Devopstrackingname {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	public System.Object Collectivegoalsname {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
 	/// <summary>PID: 1003  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackingpoints_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	public System.Object Collectivegoalsdescription_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
 	/// <summary>PID: 1003  | Type: read</summary>
-	public System.Object Devopstrackingpoints {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
-	/// <summary>PID: 1004  | Type: read | DISCREETS: Member = 0, Advocate = 1, Enabler = 2, Catalyst = 3</summary>
+	public System.Object Collectivegoalsdescription {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	/// <summary>PID: 1004  | Type: read | DISCREETS: Not Started = 0, In Progress = 1, Completed = 2, Paused = 3, Canceled = 4</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackinglevel_1004 {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
-	/// <summary>PID: 1004  | Type: read | DISCREETS: Member = 0, Advocate = 1, Enabler = 2, Catalyst = 3</summary>
-	public System.Object Devopstrackinglevel {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
-	/// <summary>PID: 1053  | Type: write</summary>
+	public System.Object Collectivegoalsstatus_1004 {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	/// <summary>PID: 1004  | Type: read | DISCREETS: Not Started = 0, In Progress = 1, Completed = 2, Paused = 3, Canceled = 4</summary>
+	public System.Object Collectivegoalsstatus {get { return GetParameter(1004); }set { SetParameter(1004, value); }}
+	/// <summary>PID: 1005  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackingpoints_1053 {get { return GetParameter(1053); }set { SetParameter(1053, value); }}
+	public System.Object Collectivegoalsduedate_1005 {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
+	/// <summary>PID: 1005  | Type: read</summary>
+	public System.Object Collectivegoalsduedate {get { return GetParameter(1005); }set { SetParameter(1005, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{
-		devopstrackingtable = new DevopstrackingtableQActionTable(this, 1000, "devopstrackingtable");
+		collectivegoals = new CollectivegoalsQActionTable(this, 1000, "collectivegoals");
 		Write = new WriteParameters(this);
 	}
 }
 /// <summary>IDX: 0</summary>
-public class DevopstrackingtableQActionTable : QActionTable, IEnumerable<DevopstrackingtableQActionRow>
+public class CollectivegoalsQActionTable : QActionTable, IEnumerable<CollectivegoalsQActionRow>
 {
-	public DevopstrackingtableQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
+	public CollectivegoalsQActionTable(SLProtocol protocol, int tableId, string tableName) : base(protocol, tableId, tableName) { }
 	IEnumerator IEnumerable.GetEnumerator() { return (IEnumerator) GetEnumerator(); }
-	public IEnumerator<DevopstrackingtableQActionRow> GetEnumerator() { return new QActionTableEnumerator<DevopstrackingtableQActionRow>(this); }
+	public IEnumerator<CollectivegoalsQActionRow> GetEnumerator() { return new QActionTableEnumerator<CollectivegoalsQActionRow>(this); }
 }
 /// <summary>IDX: 0</summary>
-public class DevopstrackingtableQActionRow : QActionTableRow
+public class CollectivegoalsQActionRow : QActionTableRow
 {
 	/// <summary>PID: 1001 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackingindex_1001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	public System.Object Collectivegoalsinstance_1001 { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
 	/// <summary>PID: 1001 | Type: read</summary>
-	public System.Object Devopstrackingindex { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
+	public System.Object Collectivegoalsinstance { get { if (base.Columns.ContainsKey(0)) { return base.Columns[0]; } else { return null; } } set { if (base.Columns.ContainsKey(0)) { base.Columns[0] = value; } else { base.Columns.Add(0, value); } } }
 	/// <summary>PID: 1002 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackingname_1002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	public System.Object Collectivegoalsname_1002 { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
 	/// <summary>PID: 1002 | Type: read</summary>
-	public System.Object Devopstrackingname { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
+	public System.Object Collectivegoalsname { get { if (base.Columns.ContainsKey(1)) { return base.Columns[1]; } else { return null; } } set { if (base.Columns.ContainsKey(1)) { base.Columns[1] = value; } else { base.Columns.Add(1, value); } } }
 	/// <summary>PID: 1003 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackingpoints_1003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	public System.Object Collectivegoalsdescription_1003 { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
 	/// <summary>PID: 1003 | Type: read</summary>
-	public System.Object Devopstrackingpoints { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
+	public System.Object Collectivegoalsdescription { get { if (base.Columns.ContainsKey(2)) { return base.Columns[2]; } else { return null; } } set { if (base.Columns.ContainsKey(2)) { base.Columns[2] = value; } else { base.Columns.Add(2, value); } } }
 	/// <summary>PID: 1004 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object Devopstrackinglevel_1004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	public System.Object Collectivegoalsstatus_1004 { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
 	/// <summary>PID: 1004 | Type: read</summary>
-	public System.Object Devopstrackinglevel { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
-	public DevopstrackingtableQActionRow() : base(0, 4) { }
-	public DevopstrackingtableQActionRow(System.Object[] oRow) : base(0, 4, oRow) { }
-	public static implicit operator DevopstrackingtableQActionRow(System.Object[] source) { return new DevopstrackingtableQActionRow(source); }
-	public static implicit operator System.Object[](DevopstrackingtableQActionRow source) { return source.ToObjectArray(); }
+	public System.Object Collectivegoalsstatus { get { if (base.Columns.ContainsKey(3)) { return base.Columns[3]; } else { return null; } } set { if (base.Columns.ContainsKey(3)) { base.Columns[3] = value; } else { base.Columns.Add(3, value); } } }
+	/// <summary>PID: 1005 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Collectivegoalsduedate_1005 { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	/// <summary>PID: 1005 | Type: read</summary>
+	public System.Object Collectivegoalsduedate { get { if (base.Columns.ContainsKey(4)) { return base.Columns[4]; } else { return null; } } set { if (base.Columns.ContainsKey(4)) { base.Columns[4] = value; } else { base.Columns.Add(4, value); } } }
+	public CollectivegoalsQActionRow() : base(0, 5) { }
+	public CollectivegoalsQActionRow(System.Object[] oRow) : base(0, 5, oRow) { }
+	public static implicit operator CollectivegoalsQActionRow(System.Object[] source) { return new CollectivegoalsQActionRow(source); }
+	public static implicit operator System.Object[](CollectivegoalsQActionRow source) { return source.ToObjectArray(); }
 }
 }

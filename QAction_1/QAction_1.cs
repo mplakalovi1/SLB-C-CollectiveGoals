@@ -1,50 +1,27 @@
 namespace MyExtension
 {
     using System;
-    using System.Text.RegularExpressions;
 
+    using Skyline.DataMiner.Net.Messages;
     using Skyline.DataMiner.Scripting;
 
-    public static class DevOpsTrackingHelper
+    /// <summary>
+    /// MyExtension Class. Contains logic to be reused across solution.
+    /// </summary>
+    public static class MyExtension
     {
-        public static bool IsDisplayKeyValid(SLProtocol protocol, string displayKey)
+        /// <summary>
+        /// Method for checking if value already exists in specified table column.
+        /// </summary>
+        /// <param name="protocol">Link with SLProtocol process.</param>
+        /// <param name="tablePid">Table Pid.</param>
+        /// <param name="columnIdx">Column Index.</param>
+        /// <param name="value">Value to be checked.</param>
+        /// <returns>Flag indicating if value exists or not.</returns>
+        public static bool ValueExists(SLProtocol protocol, int tablePid, uint columnIdx, object value)
         {
-            string message;
-
-            // Checking if it's null, empty or white-spaces only:
-            if (String.IsNullOrWhiteSpace(displayKey))
-            {
-                message = "The 'Name' must be non-empty. Please enter a different value.";
-
-                protocol.Log($"QA{protocol.QActionID}{message}", LogType.Allways, LogLevel.NoLogging);
-                protocol.ShowInformationMessage(message);
-                return false;
-            }
-
-            // Checking for specific characters:
-            // Semicolons (";"), question marks ("?") and asterisks ("*") must be avoided:
-            string pattern = "[;?*]";
-
-            if (Regex.IsMatch(displayKey, pattern))
-            {
-                message = "The 'Name' must not contain Semicolons (';'), question marks ('?') and asterisks ('*'). Please enter a different value.";
-
-                protocol.Log($"QA{protocol.QActionID}{message}", LogType.Allways, LogLevel.NoLogging);
-                protocol.ShowInformationMessage(message);
-                return false;
-            }
-
-            // Checking if primaryKey already exists:
-            if (protocol.Exists(Parameter.Devopstrackingtable.tablePid, displayKey))
-            {
-                message = "The 'Name' must be unique; the entered value already exists. Please choose a different name.";
-
-                protocol.Log($"QA{protocol.QActionID}{message}", LogType.Allways, LogLevel.NoLogging);
-                protocol.ShowInformationMessage(message);
-                return false;
-            }
-
-            return true;
+            object[] tableColumn = (object[])((object[])protocol.NotifyProtocol((int)NotifyType.NT_GET_TABLE_COLUMNS, tablePid, new[] { columnIdx }))[0];
+            return Array.Exists(tableColumn, element => element.Equals(value));
         }
     }
 }
